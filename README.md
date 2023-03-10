@@ -79,7 +79,7 @@ Clone this repository to your desired folder:
 
 - `To run the project, execute the following command:`
  ```
-    ruby main.rb
+    rails server
 ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
