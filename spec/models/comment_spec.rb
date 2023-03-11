@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   user = User.create(name: 'john', photo: 'www.google.com', bio: 'devs', postsCounter: 0)
   post = Post.create(author: user, title: 'author title', text: 'post content', likesCounter: 0,
-                         commentsCounter: 0)
+                     commentsCounter: 0)
 
   subject do
-    Comment.new(author: user, post: post, text: 'sample comment')
+    Comment.new(author: user, post:, text: 'sample comment')
   end
 
   before { subject.save }

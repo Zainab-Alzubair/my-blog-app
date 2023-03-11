@@ -10,7 +10,6 @@ RSpec.describe Post, type: :model do
 
   before { subject.save }
 
-
   it 'should have atitle' do
     subject.title = nil
     expect(subject).to_not be_valid
@@ -35,5 +34,4 @@ RSpec.describe Post, type: :model do
     subject.likesCounter = -1
     expect(subject).to_not be_valid
   end
-  
 end

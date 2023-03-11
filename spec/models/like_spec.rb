@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   user1 = User.create(name: 'Sarah', photo: 'www.google.com', bio: 'Sarah bio', postsCounter: 0)
   post1 = Post.create(author: user1, title: 'post1 title', text: 'post1 content', likesCounter: 0,
-                         commentsCounter: 0)
+                      commentsCounter: 0)
 
   subject do
     Like.new(author: user1, post: post1)
