@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>post page</h1>
-<p>Here is the post page for a given user</p>
-<ul>
-<li>Post 1</li>
-</ul>
-</body>
+  <body>
+    <div class="users-wrap">
+      <div class="post">
+        <h3 >Post#<%= @post.id %> by <%= @post.author.name %></h3>
+        <div class="post-card">
+          <b>
+            <p class="post-title"><%= @post.title %></p>
+          </b>
+          <p class="post-text"><%= @post.text %></p>
+          <div class="counters">
+            <p class="likesCounter">Likes: <%= @post.likesCounter || 0 %>, </p>
+            <p class="commentsCounter">Comments: <%= @post.commentsCounter || 0 %></p>
+          </div>
+        </div>
+      </div>
+      <div class="commentsContainer">
+        <% Comment.where(author_id: params[:user_id], post_id:@post.id).each do |comment| %>
+        <div class="comment-container">
+          <%author = User.find_by(id: comment.author_id)%>
+          <p><%=author.name%>: <%=comment.text[0..100]%>...</p>
+        </div>
+        <% end %>
+      </div>
+      <button><a href="/">Home</a></button>
+    </div>
+  </body>
 </html>

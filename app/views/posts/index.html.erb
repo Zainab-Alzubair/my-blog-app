@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>posts page</h1>
-<p>Here is the posts page for a given user</p>
-<ul>
-<li>Post 1</li>
-<li>Post 2</li>
-<li>Post 3</li>
-</ul>
-<% @posts.each do |p|%>
-  posts data
-<% end %>
-</body>
+  <body>
+    <div class="users-wrap">
+      <div class="users-container">
+        <div class="user-img">
+          <%= image_tag user.photo %>
+        </div>
+        <div class="user-card">
+          <h3> <%= user.name %> </h3>
+          <p class="user-card-p"> Number of posts: <%= user.postsCounter %></p>
+        </div>
+      </div>
+      <% @posts.each do |post| %>
+      <div class="post">
+        <a href=<%= "posts/#{post.id}" %> >
+          <div class="post-card">
+            <b>
+              <p class="post-title"><%= post.title %></p>
+            </b>
+            <p class="post-text"><%= post.text %></p>
+            <div class="counters">
+              <p class="likesCounter">Likes: <%= post.likesCounter || 0 %>, </p>
+              <p class="commentsCounter">Comments: <%= post.commentsCounter || 0 %></p>
+            </div>
+          </div>
+          <div class="commentsContainer">
+            <% Comment.where(author_id: params[:user_id], post_id:post.id).each do |comment| %>
+            <div class="comment-container">
+              <%author = User.find_by(id: comment.author_id)%>
+              <p><%=author.name%>: <%=comment.text[0..100]%>...</p>
+            </div>
+            <% end %>
+          </div>
+      </div>
+      </a>
+      <% end %>
+    </div>
+  </body>
 </html>
