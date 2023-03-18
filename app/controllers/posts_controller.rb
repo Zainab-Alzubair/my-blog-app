@@ -13,7 +13,6 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
     @user = User.find_by(id: params[:user_id])
     @posts = Post.where(author_id: params[:user_id])
     render locals: {
