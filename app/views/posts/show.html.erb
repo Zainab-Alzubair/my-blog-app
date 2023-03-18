@@ -13,6 +13,16 @@
             <p class="likesCounter">Likes: <%= @post.likesCounter || 0 %>, </p>
             <p class="commentsCounter">Comments: <%= @post.commentsCounter || 0 %></p>
           </div>
+          <div>
+            <%=form_with model: @like, url: user_post_likes_path(@post.author.id, @post), local: true  do |form| %>
+            <p>
+              <%= form.submit "Add Like" %>
+            </p>
+            <% end %>
+            <button>
+            <%= link_to "Add comment", new_user_post_comment_path(@post.author.id, @post) %>
+            </button>
+          </div>
         </div>
       </div>
       <div class="commentsContainer">
