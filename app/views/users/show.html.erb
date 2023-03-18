@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>user page</h1>
-<p>Here is the profile page for a given user</p>
-<ul>
-<li>Bio</li>
-<li>Post 1</li>
-<li>Post 2</li>
-</ul>
-</body>
+  <body>
+    <header>
+      <nav>
+        <div class="topnav">
+          <a class="logo" href="#home">My Blog</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="users-wrap">
+      <div class="users-container">
+        <div class="user-img">
+          <%= image_tag user.photo %>
+        </div>
+        <div class="user-card">
+          <h3> <%= user.name %> </h3>
+          <p class="user-card-p"> Number of posts: <%= user.postsCounter %></p>
+        </div>
+      </div>
+      <div class="bio">
+        <p> Bio:<br><br> <%= user.bio %></p>
+      </div>
+      <% @user.recent_posts.each do |post| %>
+      <div class="post">
+        <div class="post-card">
+          <b>
+            <p class="post-title"><%= post.title %></p>
+          </b>
+          <p class="post-text"><%= post.text %></p>
+          <div class="counters">
+            <p class="likesCounter">Likes: <%= post.likesCounter || 0 %>, </p>
+            <p class="commentsCounter">Comments: <%= post.commentsCounter || 0 %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <a href=<%= "#{@user.id}/posts"%>><button >See all posts</button></a>
+    </main>
+  </body>
 </html>
