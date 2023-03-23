@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
+    render :new
   end
 
   def create
     @post = Post.new(post_params)
+    @post.commentsCounter = 0
+    @post.likesCounter = 0
     if @post.save
       redirect_to user_posts_path(params[:user_id])
     else
@@ -14,7 +17,7 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find_by(id: params[:user_id])
-    @posts = Post.where(author_id: params[:user_id])
+    @posts =  @user.posts
     render locals: {
       user: @user
     }
