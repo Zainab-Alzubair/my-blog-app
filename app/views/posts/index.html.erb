@@ -11,7 +11,7 @@
           <p class="user-card-p"> Number of posts: <%= user.postsCounter || 0  %></p>
         </div>
       </div>
-      <% @posts.each do |post| %>
+      <% @posts.includes(:comments).each do |post| %>
       <div class="post">
         <a href=<%= "posts/#{post.id}" %> >
           <div class="post-card">
