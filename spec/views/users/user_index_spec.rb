@@ -7,8 +7,9 @@ RSpec.describe 'users#index', type: :feature do
     @second_post = Post.create(author_id: @first_user.id, title: 'My second post', text: 'This is my second post')
     # secod user
     @second_user = User.create(name: 'Sarah', photo: 'https://picsum.photos/200/300', bio: 'I am a teacher')
-    @second_user_first_post = Post.create(author_id: @second_user.id, title: 'My first post', text: 'This is my first post')
-   
+    @second_user_first_post = Post.create(author_id: @second_user.id, title: 'My first post',
+                                          text: 'This is my first post')
+
     visit users_path
   end
 
