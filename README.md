@@ -92,6 +92,12 @@ Clone this repository to your desired folder:
 - GitHub: [Zainab-Al-Zubair](https://github.com/Zainab-Alzubair)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/zainab-al-zubair)
 
+👤 **Odai**
+
+- GitHub: [odai-alazzeh](https://github.com/odaialazzeh)
+- Twitter: [@twitterhandle](https://twitter.com/odaialazzeh4)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/odaialazzeh/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
