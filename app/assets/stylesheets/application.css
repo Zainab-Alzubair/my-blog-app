@@ -2,30 +2,33 @@ body {
   margin: 0;
   padding: 0;
 }
-
+​
 main {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-
+​
 .topnav {
   height: 50px;
   background-color: #4f46e5;
   margin: 0;
   padding: 1rem;
 }
-
+​
 .logo {
   color: #ffff;
   font-size: 2em;
   font-weight: 600;
 }
-
+​
 a {
+  color: #333;
   text-decoration: none;
-  color: black;
+  width: 65%;
+  padding: 17px;
+  margin: 0 auto;
 }
-
+​
 .users-wrap {
   display: flex;
   flex-direction: column;
@@ -33,7 +36,7 @@ a {
   justify-content: center;
   align-items: center;
 }
-
+​
 .users-container {
   display: flex;
   gap: 30px;
@@ -43,19 +46,19 @@ a {
   width: 70%;
   padding: 1rem;
 }
-
+​
 .user-img {
   padding: 1rem;
 }
-
+​
 .user-card {
   padding: 1rem;
 }
-
+​
 .user-card-p {
   float: right;
 }
-
+​
 .bio {
   display: flex;
   gap: 30px;
@@ -66,7 +69,7 @@ a {
   margin: 1rem;
   padding: 1rem;
 }
-
+​
 .post {
   display: flex;
   flex-direction: column;
@@ -77,12 +80,12 @@ a {
   margin: 1rem;
   padding: 1rem;
 }
-
+​
 .counters {
   display: flex;
   justify-content: flex-end;
 }
-
+​
 .commentsContainer {
   display: flex;
   flex-direction: column;
@@ -92,4 +95,42 @@ a {
   width: 70%;
   margin: 1rem;
   padding: 1rem;
+}
+​
+.new_user {
+  width: 80%;
+  padding: 16px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+​
+.field,
+.actions {
+  width: 80%;
+  margin: 0 auto;
+}
+​
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"] {
+  width: 100%;
+  padding: 8px;
+}
+​
+.additional_info {
+  width: 60%;
+  padding: 16px;
+  margin: 0 auto;
+}
+​
+.additional_info a {
+  width: 65%;
+  padding: 17px;
+  margin: 0 auto;
+}
+​
+h2 {
+  text-align: center;
 }
