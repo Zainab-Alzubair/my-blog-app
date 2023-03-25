@@ -5,7 +5,7 @@ RSpec.describe 'users#show', type: :feature do
     @user = User.create(name: 'Kim', photo: 'https://picsum.photos/200/300', bio: 'I am a Software Engineer')
     @first_post = Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
     @second_post = Post.create(author_id: @user.id, title: 'My second post', text: 'This is my second post')
-   
+
     visit user_path(@user.id)
   end
   it 'can see the user profile picture' do
