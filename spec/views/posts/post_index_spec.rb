@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'posts#index', type: :feature do
   before(:each) do
-    @first_user = User.create(name: 'Kim', photo: 'https://picsum.photos/200/300', bio: 'I am a Software Engineer')
-    @first_post = Post.create(author_id: @first_user.id, title: 'My first post', text: 'This is my first post')
-    @second_post = Post.create(author_id: @first_user.id, title: 'My second post', text: 'This is my second post')
+    @user = User.create(name: 'Kim', photo: 'https://picsum.photos/200/300', bio: 'I am a Software Engineer')
+    @first_post = Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
+    @second_post = Post.create(author_id: @user.id, title: 'My second post', text: 'This is my second post')
     # secod user
     @second_user = User.create(name: 'Sarah', photo: 'https://picsum.photos/200/300', bio: 'I am a teacher')
     @second_user_first_post = Post.create(author_id: @second_user.id, title: 'My first post',
                                           text: 'This is my first post')
 
-    Comment.create(author_id: @second_user.id, post_id: @second_user_first_post.id, text: 'This is my first comment')
+    Comment.create(author_id: @second_user.id, post_id: @first_post.id, text: 'This is my first comment')
 
     visit user_posts_path(@user.id)
   end
@@ -50,6 +50,6 @@ RSpec.describe 'posts#index', type: :feature do
 
   it 'When I click on a post, it redirects me to that post show page.' do
     click_link 'This is my second post'
-    expect(page).to have_current_path(user_post_path(@user.id, @post_second.id))
+    expect(page).to have_current_path(user_post_path(@user.id, @second_post.id))
   end
 end

@@ -2,12 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'users#show', type: :feature do
   before(:each) do
-    @first_user = User.create(name: 'Kim', photo: 'https://picsum.photos/200/300', bio: 'I am a Software Engineer')
+    @user = User.create(name: 'Kim', photo: 'https://picsum.photos/200/300', bio: 'I am a Software Engineer')
     @first_post = Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
     @second_post = Post.create(author_id: @user.id, title: 'My second post', text: 'This is my second post')
-    # secod user
-    @second_user = User.create(name: 'Sarah', photo: 'https://picsum.photos/200/300', bio: 'I am a teacher')
-    @second_user_first_post = Post.create(author_id: @user.id, title: 'My first post', text: 'This is my first post')
 
     visit user_path(@user.id)
   end
