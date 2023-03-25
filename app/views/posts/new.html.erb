@@ -1,7 +1,7 @@
 <div class="formContainer">
   <h1>Add new post</h1>
   <div>
-      <%= form_with model: @post, url: user_posts_path , local: true do |form| %>
+      <%= form_with model: @post, url: user_posts_path , method: :post, local: true do |form| %>
       <p>
         <%= form.label :title %><br>
         <%= form.text_field :title %>
