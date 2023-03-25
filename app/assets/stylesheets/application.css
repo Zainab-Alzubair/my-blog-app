@@ -22,8 +22,11 @@ main {
 }
 
 a {
+  color: #333;
   text-decoration: none;
-  color: black;
+  width: 65%;
+  padding: 17px;
+  margin: 0 auto;
 }
 
 .users-wrap {
@@ -92,4 +95,42 @@ a {
   width: 70%;
   margin: 1rem;
   padding: 1rem;
+}
+
+.new_user {
+  width: 80%;
+  padding: 16px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.field,
+.actions {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="text"] {
+  width: 100%;
+  padding: 8px;
+}
+
+.additional_info {
+  width: 60%;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.additional_info a {
+  width: 65%;
+  padding: 17px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
 }
